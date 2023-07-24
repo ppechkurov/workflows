@@ -6,6 +6,14 @@ Link to the case this pull request closes
 
 What does this implement/fix? Explain your changes.
 ---------------------------------------------------
+* **What is the current behavior?**
+
+
+* **What is the new behavior?**
+
+
+* **Does this PR introduce a breaking change?** (What changes might users need to make in their application due to this PR?)
+
 …
 
 Any relevant logs, error output, etc?
