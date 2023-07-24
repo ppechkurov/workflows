@@ -2,7 +2,6 @@
 
 Link to the case this pull request closes
 ------------------------------------------
-…
 [Case number](https://link-to-case.here)
 
 What does this implement/fix? Explain your changes.
