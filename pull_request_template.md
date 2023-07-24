@@ -8,8 +8,6 @@ What does this implement/fix? Explain your changes.
 ---------------------------------------------------
 …
 
-
-
 Any relevant logs, error output, etc?
 -------------------------------------
 …
