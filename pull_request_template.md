@@ -3,6 +3,7 @@
 Link to the case this pull request closes
 ------------------------------------------
 [Case number](https://link-to-case.here)
+<!-- Example: [1234](https://flosumbiz.lightning.force.com/lightning/r/Case/5001P00001ZGxxxXXX/view) -->
 
 What does this implement/fix? Explain your changes.
 ---------------------------------------------------
