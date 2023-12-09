@@ -1,0 +1,38 @@
+name: "Send Notification"
+description: "send"
+inputs:
+  token:
+    description: "token"
+    required: true
+  chat_id:
+    description: "chat id"
+    required: true
+  message:
+    description: "message"
+    required: true
+  message_thread_id:
+    description: "message thread id"
+    required: false
+
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        res=$(curl --get \
+          --data-urlencode "parse_mode=HTML" \
+          --data-urlencode "chat_id=${{ inputs.chat_id }}" \
+          --data-urlencode "text=${{ inputs.message }}" \
+          --data-urlencode "message_thread_id=${{ inputs.message_thread_id }}" \
+          --silent \
+          https://api.telegram.org/bot${{ inputs.token }}/sendMessage)
+
+        echo "## Bot response" >> $GITHUB_STEP_SUMMARY
+        echo '```json' >> $GITHUB_STEP_SUMMARY
+        echo "${res}" | jq >> ${GITHUB_STEP_SUMMARY}
+        echo '```' >> $GITHUB_STEP_SUMMARY
+
+        ok=$(echo $res | jq '.ok')
+        if [[ $ok == false ]]; then
+          echo "::error ::Something went wrong!"
+        fi
+      shell: bash
